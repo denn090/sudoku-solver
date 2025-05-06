@@ -154,7 +154,7 @@ with col1:
             if st.button("▶️ Starten"):
                 st.session_state.grid_copy = [[int(cell) for cell in row] for row in grid]
                 st.session_state.fixed_cells = [[st.session_state[f"{i}-{j}"] != "0" for j in range(9)] for i in range(9)]
-                st.session_state.generator = solve_step_by_step(st.session_state.grid_copy)
+                st.session_state.generator = solve_step_by_step(st.session_state.grid_copy, st.session_state.symbols)
                 st.session_state.run_animation = True
                 st.session_state.paused_animation = False
                 st.session_state.animation_finished = False
