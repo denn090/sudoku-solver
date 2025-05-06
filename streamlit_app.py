@@ -1,7 +1,8 @@
 import streamlit as st
 import json
 import time
-from solver import solve, solve_step_by_step, reset_attempts, get_attempts
+from solver import solve, reset_attempts, get_attempts
+from generator import solve_step_by_step
 from difficulty import count_empty, estimate_difficulty
 
 st.set_page_config(page_title="Sudoku Solver", layout="centered")
