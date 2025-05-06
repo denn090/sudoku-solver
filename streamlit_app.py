@@ -7,6 +7,9 @@ from difficulty import count_empty, estimate_difficulty
 st.set_page_config(page_title="Sudoku Solver", layout="centered")
 st.title("Sudoku Solver")
 
+if "symbols" not in st.session_state:
+    st.session_state.symbols = [str(i) for i in range(1, 10)]
+
 examples = {}
 try:
     with open("examples/sudoku_examples.json", "r", encoding="utf-8") as f:
