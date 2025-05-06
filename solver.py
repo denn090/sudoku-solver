@@ -47,3 +47,17 @@ def count_solutions(grid, symbols):
 
     backtrack()
     return count
+
+def solve_step_by_step(grid, symbols):
+    size = len(grid)
+    for i in range(size):
+        for j in range(size):
+            if grid[i][j] == '':
+                for val in symbols:
+                    if valid(grid, i, j, val):
+                        grid[i][j] = val
+                        yield (i, j, val)
+                        yield from solve_step_by_step(grid, symbols)
+                        grid[i][j] = ''
+                return
+    yield None
