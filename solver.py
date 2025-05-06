@@ -61,3 +61,12 @@ def solve_step_by_step(grid, symbols):
                         grid[i][j] = ''
                 return
     yield None
+
+_attempts = 0 
+
+def reset_attempts():
+    global _attempts
+    _attempts = 0
+
+def get_attempts():
+    return _attempts
